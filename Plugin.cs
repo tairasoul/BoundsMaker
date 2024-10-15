@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace BoundsMaker
 {
-    [BepInPlugin("tairasoul.boundsmaker", "BoundsMaker", "1.0.0")]
+    [BepInPlugin("tairasoul.boundsmaker", "BoundsMaker", "1.0.1")]
     class Plugin : BaseUnityPlugin
     {
         internal Vector3 StartPos;
@@ -68,7 +68,7 @@ namespace BoundsMaker
             {
                 keyDown = false;
             }
-            GameObject Sen = GameObject.Find("S-105");
+            GameObject Sen = GameObject.Find("S-105.1");
             if (CreatingBounds)
             {
                 if (newBounds)

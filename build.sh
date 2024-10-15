@@ -1,4 +1,4 @@
-msbuild -p:Configuration=Release
+dotnet build -p:Configuration=Release
 rm BoundsMaker.dll
 cd bin/Release/net48
 declare -a copy=("BoundsMaker.dll")

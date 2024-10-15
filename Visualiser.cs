@@ -14,16 +14,13 @@ namespace BoundsMaker
         {
             LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
             if (!lineRenderer)
-            {
                 lineRenderer = gameObject.AddComponent<LineRenderer>();
-                // Set LineRenderer properties (same as in your code)
-            }
 
             Vector3 center = bounds.center;
             Vector3 size = bounds.size;
 
             Vector3[] corners =
-            {
+            [
                 center + new Vector3(size.x, size.y, size.z) * 0.5f,
                 center + new Vector3(size.x, size.y, -size.z) * 0.5f,
                 center + new Vector3(-size.x, size.y, -size.z) * 0.5f,
@@ -32,15 +29,14 @@ namespace BoundsMaker
                 center + new Vector3(size.x, -size.y, -size.z) * 0.5f,
                 center + new Vector3(-size.x, -size.y, -size.z) * 0.5f,
                 center + new Vector3(-size.x, -size.y, size.z) * 0.5f
-            };
+            ];
 
-            // Define indices to draw the edges of the box
             int[] indices =
-            {
-                0, 1, 1, 2, 2, 3, 3, 0, // Top face
-                4, 5, 5, 6, 6, 7, 7, 4, // Bottom face
-                0, 4, 1, 5, 2, 6, 3, 7  // Vertical edges
-            };
+            [
+                0, 1, 1, 2, 2, 3, 3, 0,
+                4, 5, 5, 6, 6, 7, 7, 4,
+                0, 4, 1, 5, 2, 6, 3, 7 
+            ];
 
             lineRenderer.positionCount = indices.Length;
 
